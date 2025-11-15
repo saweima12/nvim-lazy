@@ -1,10 +1,15 @@
 return {
-  "sainnhe/edge",
-  lazy = false,
-  opts = {},
-  config = function()
-    vim.g.edge_style = "aura"
-    -- vim.cmd("colorscheme edge")
-    vim.cmd("colorscheme catppuccin-macchiato")
-  end,
+  {
+    "catppuccin",
+    optional = true,
+    opts = function()
+      local bufferline = require("catppuccin.groups.integrations.bufferline")
+      bufferline.get = bufferline.get or bufferline.get_theme
+    end,
+  },
+
+  {
+    "LazyVim/LazyVim",
+    opts = { colorscheme = "catppuccin" },
+  },
 }

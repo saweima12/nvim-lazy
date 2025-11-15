@@ -29,8 +29,8 @@ vim.keymap.del({ "n" }, "<leader>gf", { silent = true })
 vim.keymap.del({ "n" }, "<leader>gG", { silent = true })
 
 -- Disable buffer related
-vim.keymap.del({ "n" }, "<leader>bd", { silent = true })
-vim.keymap.del({ "n" }, "<leader>bD", { silent = true })
+-- vim.keymap.del({ "n" }, "<leader>bd", { silent = true })
+-- vim.keymap.del({ "n" }, "<leader>bD", { silent = true })
 
 -- Disable inspect related
 vim.keymap.del({ "n" }, "<leader>ui", { silent = true })
@@ -140,3 +140,18 @@ map({ "n", "v" }, "<leader>cm", function()
     print("Highlighted: " .. word)
   end
 end, { desc = "Highlight selection or word" })
+
+map("n", "<leader>cr", function()
+  local search_word = vim.fn.getreg("/")
+
+  if search_word == "" then
+    print("No search pattern found. Highlight something first.")
+    return
+  end
+
+  local replace_cmd = ":%s/" .. search_word .. "//g"
+  vim.fn.feedkeys(":" .. vim.api.nvim_replace_termcodes(replace_cmd, true, false, true))
+  vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Left><Left>", true, false, true))
+
+  print("Global replace mode for: " .. search_word)
+end, { desc = "Replace all occurrences of highlighted text" })

@@ -41,3 +41,11 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     map("v", "<localleader>c", ":'<,'>!jq -c .<CR>", { desc = "Compact selected JSON", buffer = args.buf })
   end,
 })
+
+-- Disable autoformat for lua files
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "cpp" },
+  callback = function()
+    vim.b.autoformat = false
+  end,
+})

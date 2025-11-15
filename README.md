@@ -5,7 +5,7 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 
 ## Requirements
 
-- Neovim 0.11+
+- Neovim 0.11.2+
 - Ripgrep
 - Fzf
 - Nodejs 20+ (for LSP)
@@ -25,4 +25,3 @@ NOTE: Use `:LazyHealth` to check the dependencies
 [ -d $HOME/.config/nvim ] && mv $HOME/.config/{nvim,nvim.old}; \
     git clone git@github.com:saweima12/nvim-lazy.git $HOME/.config/nvim
 ```
-
