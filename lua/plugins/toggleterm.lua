@@ -1,8 +1,3 @@
-local function toggleLazygit()
-  local lazygit = require("plugins.terminals.lazygit")
-  lazygit:toggle()
-end
-
 return {
   "akinsho/toggleterm.nvim",
   lazy = false,
@@ -18,13 +13,5 @@ return {
     close_on_exit = true, -- close the terminal window when the process exits
     shell = vim.o.shell, -- change the default shell
   },
-  keys = {
-    -- {
-    --   "<leader>gg",
-    --   function()
-    --     toggleLazygit()
-    --   end,
-    --   desc = "Lazygit",
-    -- },
-  },
+  keys = {},
 }
