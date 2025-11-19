@@ -3,6 +3,12 @@ return {
   keys = {
     { "<leader>sg", LazyVim.pick("live_grep", { root = false }), desc = "Grep" },
     { "<leader>sG", false },
+    {
+      "<leader>gg",
+      function()
+        Snacks.lazygit({ win = { border = "double" } })
+      end,
+    },
   },
 
   opts = {

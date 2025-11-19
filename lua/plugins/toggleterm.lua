@@ -19,12 +19,12 @@ return {
     shell = vim.o.shell, -- change the default shell
   },
   keys = {
-    {
-      "<leader>gg",
-      function()
-        toggleLazygit()
-      end,
-      desc = "Lazygit",
-    },
+    -- {
+    --   "<leader>gg",
+    --   function()
+    --     toggleLazygit()
+    --   end,
+    --   desc = "Lazygit",
+    -- },
   },
 }
