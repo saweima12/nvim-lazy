@@ -104,14 +104,6 @@ map("n", "<leader>u`", function()
   Snacks.picker.colorschemes()
 end, { desc = "Change colorscheme" })
 
-map("n", "<leader>bq", function()
-  Snacks.bufdelete()
-end, { desc = "Close Buffer" })
-
--- Add lsp related keybindings
-map("n", "gF", "<cmd>Lspsaga finder<cr>", { desc = "Finder" })
-map("n", "gR", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "LSP Rename" })
-
 -- Mapping fn+left & fn+right
 map("n", "<Find>", "^")
 map("i", "<Find>", "<C-o>^")

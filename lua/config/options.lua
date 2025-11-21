@@ -4,7 +4,7 @@
 --
 vim.o.showtabline = 2
 vim.g.snacks_animate = false
-vim.b.autoformat = false
+vim.g.autoformat = false
 
 vim.filetype.add({
   pattern = { ["jenkinsfile"] = "groovy" },

@@ -12,7 +12,7 @@ local map = LazyVim.safe_keymap_set
 
 -- For disable autoformat
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "cc", "cpp", "h" },
+  pattern = { "cc", "cpp", "h", "*.txt", "Makefile" },
   callback = function()
     vim.b.autoformat = false
   end,
@@ -39,13 +39,5 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     -- Define compact json
     map("n", "<localleader>c", ":%!jq -c .<CR>", { desc = "Compact JSON file", buffer = args.buf })
     map("v", "<localleader>c", ":'<,'>!jq -c .<CR>", { desc = "Compact selected JSON", buffer = args.buf })
-  end,
-})
-
--- Disable autoformat for lua files
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "cpp" },
-  callback = function()
-    vim.b.autoformat = false
   end,
 })

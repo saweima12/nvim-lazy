@@ -16,12 +16,16 @@ NOTE: Use `:LazyHealth` to check the dependencies
 
 ## Use it
 
+- By HTTPS
+
 ```bash
-# By HTTPS
 [ -d $HOME/.config/nvim ] && mv $HOME/.config/{nvim,nvim.old}; \
     git clone https://github.com/saweima12/nvim-lazy.git $HOME/.config/nvim
+```
 
-# By SSH
+- By SSH
+
+```bash
 [ -d $HOME/.config/nvim ] && mv $HOME/.config/{nvim,nvim.old}; \
     git clone git@github.com:saweima12/nvim-lazy.git $HOME/.config/nvim
 ```

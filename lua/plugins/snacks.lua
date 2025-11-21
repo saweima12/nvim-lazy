@@ -8,6 +8,7 @@ return {
       function()
         Snacks.lazygit({ win = { border = "double" } })
       end,
+      desc = "Open Lazygit",
     },
   },
 
