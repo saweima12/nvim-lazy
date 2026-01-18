@@ -10,6 +10,8 @@ return {
       end,
       desc = "Open Lazygit",
     },
+    { "<leader>ff", false },
+    { "<leader>fF", false },
   },
 
   opts = {

@@ -26,14 +26,14 @@ return {
   {
     "mrjones2014/codesettings.nvim",
     opts = {
-      live_reload = true,
+      live_reload = false,
       -- I recommend loading on these filetype so that the
       -- jsonls integration, lua_ls integration, and jsonc filetype setup works
-      ft = { "json", "jsonc", "lua" },
+      ft = { "json", "lua" },
     },
 
     init = function()
-      vim.lsp.config("*", {
+      vim.lsp.config("gopls", {
         before_init = function(_, config)
           local codesettings = require("codesettings")
           config = codesettings.with_local_settings(config.name, config)
